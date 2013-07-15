@@ -1,0 +1,45 @@
+.row
+
+  .book.column
+    .title.centered
+      %h1.shadowed Smash the Monolith:
+      %h2.shadowed Taming Legacy Rails Applications
+    .byline
+      %h3 Corey Ehmke
+      %h3 &amp; Kerri Miller
+
+  .signup.column
+    %h1 Learn how to tame your legacy Rails applications.
+
+    - if @unsaved
+
+      %h2.top_margin
+        Sign up for updates, sneak peeks,
+        %br
+        and more from the upcoming book.
+
+      = form_for @subscription, :url => subscriptions_path do |f|
+        = f.text_field :email, :placeholder => @subscription.message
+        = f.submit "Sign Up"
+
+    - else
+
+      %h2.top_margin
+        Thanks for signing up!
+      %h2.top_margin
+        Check your email for a message
+        confirming your subscription.
+
+.row.top_margin
+
+  %h1.top_margin About the Authors
+
+  .column.top_margin
+    %h2 Corey Ehmke
+    %p
+      Corey is a 20-year veteran of web development in addition to being a musician and maker. His interests include electronics, restoring his 1930s Tudor-style house, machine learning, and ancient Egyptian religion.
+
+  .column.top_margin
+    %h2 Kerri Miller
+    %p
+      Kerri is a software engineer, conference speaker, chef, poker player, glassworker, scooter mechanic, baseball & soccer fan, and hiker... but not necessarily in that order.

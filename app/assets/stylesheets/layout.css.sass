@@ -1,0 +1,39 @@
+@import "bourbon"
+@import "neat"
+
+body
+  background: #191919 url("/assets/background.png") repeat-x
+
+.row
+  @include outer-container
+  padding-left: 1em
+
+.column
+  @include span-columns(6)
+  min-width: 400px
+
+.book
+  background-image: url("/assets/cover.png")
+  background-repeat: no-repeat
+  height: 556px
+  .title
+    width: 450px
+    padding-top: 108px
+  .byline
+    width: 450px
+    margin-top: 266px
+    padding-left: 275px
+    text-align: left
+    padding-right: 60px
+
+.signup
+  text-align: left
+  @include breakpoint(min-width 930px)
+    margin-top: 325px
+
+.top_margin
+  margin-top: 1em
+
+.top_border
+  margin-top: 2em
+  border-top: 1px solid #555555
