@@ -24,4 +24,9 @@ class Subscription
     end
   end
 
+  def reset
+    self.email = nil
+    self.message = "Invalid email."
+  end
+
 end

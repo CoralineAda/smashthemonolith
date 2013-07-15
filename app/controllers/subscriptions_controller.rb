@@ -7,7 +7,9 @@ class SubscriptionsController < ApplicationController
   end
 
   def create
-    @subscription.save && @subscription.register_with_mailchimp && @unsaved = nil
+    @subscription.save && @subscription.valid? && @subscription.register_with_mailchimp && @unsaved = false
+    @subscription.reset unless @subscription.valid?
+    @unsaved = true unless @subscription.valid?
     render :index
   end
 
@@ -15,7 +17,10 @@ class SubscriptionsController < ApplicationController
 
   def scope_subscription
     @subscription = Subscription.new({:message => 'Your email address'}.merge(params[:subscription] || {}))
-    @subscription.message = @subscription.errors.messages.first unless @subscription.email.present? && @subscription.valid?
+  end
+
+  def thank_you_text
+    "Thanks for signing up! Check your email for a message confirming your subscription."
   end
 
 end
