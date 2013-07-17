@@ -4,6 +4,7 @@ gem 'rails', '3.2.13'
 
 gem 'bson_ext'
 gem 'gibbon'
+gem 'google-analytics-rails'
 gem 'haml'
 gem 'jquery-rails'
 gem 'mongoid'

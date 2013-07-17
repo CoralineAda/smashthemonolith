@@ -7,3 +7,4 @@
     = csrf_meta_tags
   %body
     = yield
+    = analytics_init if Rails.env.production?
